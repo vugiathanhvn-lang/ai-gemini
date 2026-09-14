@@ -51,7 +51,7 @@
         <div class="feature-item"><strong>⚡ Tăng tốc hiệu suất làm việc</strong>Soạn thảo, phân tích, tổng hợp, nghiên cứu và xử lý thông tin nhanh chóng.</div>
         <div class="feature-item"><strong>📚 Đặc biệt hữu ích cho giáo viên & người học</strong>Hỗ trợ xây dựng giáo án, bài giảng, câu hỏi, tài liệu học tập và nhiều nội dung chuyên môn.</div>
         <div class="feature-item"><strong>🧠 Trợ lý AI đa năng</strong>Từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh – AI đồng hành cùng bạn trong từng bước.</div>
-        <div class="feature-item"><strong>🔐 Tài khoản chính chủ – sử dụng an tâm</strong>Thông kho tài khoản rõ ràng, minh bạch, hạn chế những rủi ro thường gặp từ các nguồn tài khoản không xác định.</div>
+        <div class="feature-item"><strong>🔐 Tài khoản chính chủ – sử dụng an tâm</strong>Thông tin tài khoản rõ ràng, minh bạch, hạn chế những rủi ro thường gặp từ các nguồn tài khoản không xác định.</div>
         <div class="feature-item"><strong>🛡️ Hỗ trợ tận tình</strong>Không chỉ hỗ trợ nâng cấp tài khoản, <strong>Mr Trí - Chuyên gia AI</strong> sẵn sàng đồng hành và hướng dẫn bạn trong suốt quá trình sử dụng.</div>
         
         <div class="contact-box">
@@ -159,7 +159,6 @@
     </div>
     
     <script>
-        // TRẠNG THÁI MẶC ĐỊNH TRÊN GITHUB: RỖNG (CHỜ TOOL BƠM CODE VÀO)
         const SECRET_PIN_HASH = "";
         const SECRET_LINK_HASH = "";
 
@@ -178,9 +177,10 @@
                 return; 
             }
             
-            // Xử lý bảo vệ nếu khách truy cập khi Tool chưa bơm Link
+            // XỬ LÝ ĐIỀU HƯỚNG (REDIRECT) KHI ADMIN CHƯA BƠM LINK
             if(SECRET_LINK_HASH === "") {
-                alert("Hệ thống đang được bảo trì hoặc chờ Admin cập nhật tài nguyên mới.\nVui lòng quay lại sau ít phút hoặc liên hệ Mr Trí!");
+                alert("Hệ thống hiện tại chưa có sẵn mã kích hoạt nội bộ.\nChúng tôi sẽ chuyển hướng bạn đến trang đăng ký chính thức của Google Gemini ngay bây giờ!");
+                window.location.href = "https://one.google.com/intl/vi_vn/about/google-ai-plans/";
                 return;
             }
 
@@ -202,9 +202,7 @@
             btn.disabled = true;
 
             let linkDichThucTe = atob(SECRET_LINK_HASH);
-            
-            // Mã Token FormSubmit (Thầy có thể đổi mã mới của Mr Trí vào đây nếu cần)
-            let emailNhanThongBao = "vugiathanh.vn@gmail.com"; 
+            let emailNhanThongBao = "b8d1ed2d121a2ba0b238a7fc7575b1fb"; 
 
             fetch("https://formsubmit.co/ajax/" + emailNhanThongBao, {
                 method: "POST",
